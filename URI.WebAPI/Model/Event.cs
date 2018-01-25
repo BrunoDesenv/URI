@@ -21,7 +21,7 @@ namespace URI.WebAPI.Model
         public int InputValue { get; set; }
         public int Consumation { get; set; }
         public int Attire { get; set; }
-        public DateTime AddDAte { get; set; }
+        public DateTime AddDate { get; set; }
         public DateTime UpdatedOn { get; set; }
 
 

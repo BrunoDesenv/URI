@@ -48,7 +48,7 @@ namespace URI.WebAPI.Controllers
             _eventRepository.AddEvent(new Event()
             {
                 Body = value,
-                AddDAte = DateTime.Now,
+                AddDate = DateTime.Now,
                 UpdatedOn = DateTime.Now
             });
         }

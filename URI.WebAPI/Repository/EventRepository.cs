@@ -9,9 +9,9 @@ using URI.WebAPI.Repository.Interface;
 
 namespace URI.WebAPI.Repository
 {
-    public class EventRepository : IEventRepository
+    public class EventRepository : BaseRepository<Event>, IEventRepository
     {
-        private readonly BaseRepository _context = null;
+        private object _context;
 
         public EventRepository(IOptions<Settings> settings)
         {
