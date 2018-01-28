@@ -1,144 +1,71 @@
 ﻿using Microsoft.Extensions.Options;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Linq;
 using URI.WebAPI.Model;
 using URI.WebAPI.Repository.Interface;
 
 namespace URI.WebAPI.Repository
 {
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : ModelBase
     {
         private readonly IMongoDatabase _database = null;
+        private string _collectionName;
 
-        public BaseRepository(IOptions<Settings> settings)
+        public BaseRepository(IOptions<Settings> settings, string collectionName)
         {
             var client = new MongoClient(settings.Value.ConnectionString);
 
             if (client != null)
-                _database = client.GetDatabase(settings.Value.Database); ;
+                _database = client.GetDatabase(settings.Value.Database);
+
+            _collectionName = collectionName;
         }
 
-        public async Task<IEnumerable<TEntity>> GetAll()
+        void IBaseRepository<TEntity>.Add(TEntity entity)
         {
-            try
-            {
-                return await _context.Events
-                        .Find(_ => true).ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                // log or manage the exception
-                throw ex;
-            }
+            var collection = _database.GetCollection<TEntity>(_collectionName);
+
+            collection.InsertOne(entity);
         }
 
-        public async Task<TEntity> Get(string id)
+        void IBaseRepository<TEntity>.Update(TEntity entity)
         {
-            var filter = Builders<TEntity>.Filter.Eq("Id", id);
+            var collection = _database.GetCollection<TEntity>(_collectionName);
 
-            try
-            {
-                return await _context.Events
-                                .Find(filter)
-                                .FirstOrDefaultAsync();
-            }
-            catch (Exception ex)
-            {
-                // log or manage the exception
-                throw ex;
-            }
+            var filter = Builders<TEntity>.Filter.Eq("id", entity.Id);
+
+            var UpdateAllObj = Builders<TEntity>.Update
+                .Set(x => x, entity);
+
+
+            collection.UpdateOne(filter, UpdateAllObj);
         }
 
-        public async Task Add(TEntity item)
+        void IBaseRepository<TEntity>.Delete(Guid id)
         {
-            try
-            {
-                await _context.Events.InsertOneAsync(item);
-            }
-            catch (Exception ex)
-            {
-                // log or manage the exception
-                throw ex;
-            }
+            var collection = _database.GetCollection<TEntity>(_collectionName);
+            var filter = Builders<TEntity>.Filter.Eq("id", id);
+
+            collection.DeleteOne(filter);
         }
 
-        public async Task<bool> Remove(string id)
+        TEntity IBaseRepository<TEntity>.GetById(Guid id)
         {
-            try
-            {
-                DeleteResult actionResult
-                    = await _context.Events.DeleteOneAsync(
-                        Builders<TEntity>.Filter.Eq("Id", id));
+            var collection = _database.GetCollection<TEntity>(_collectionName);
 
-                return actionResult.IsAcknowledged
-                    && actionResult.DeletedCount > 0;
-            }
-            catch (Exception ex)
-            {
-                // log or manage the exception
-                throw ex;
-            }
+            var result = collection.AsQueryable().Where(x => x.Id == id);
+
+            return result.FirstOrDefault();
         }
 
-        public async Task<bool> Update(string id, string body)
+        IEnumerable<TEntity> IBaseRepository<TEntity>.GetAll()
         {
-            var filter = Builders<TEntity>.Filter.Eq(s => s.Id, id);
-            var update = Builders<TEntity>.Update
-                            .Set(s => s.Body, body)
-                            .CurrentDate(s => s.UpdatedOn);
+            var collection = _database.GetCollection<TEntity>(_collectionName);
 
-            try
-            {
-                UpdateResult actionResult
-                    = await _context.Events.UpdateOneAsync(filter, update);
-
-                return actionResult.IsAcknowledged
-                    && actionResult.ModifiedCount > 0;
-            }
-            catch (Exception ex)
-            {
-                // log or manage the exception
-                throw ex;
-            }
+            return collection.Find(_ => true).ToList();
         }
 
-        public async Task<bool> Update(string id, TEntity item)
-        {
-            try
-            {
-                ReplaceOneResult actionResult
-                    = await _context.Events
-                                    .ReplaceOneAsync(n => n.Id.Equals(id)
-                                            , item
-                                            , new UpdateOptions { IsUpsert = true });
-                return actionResult.IsAcknowledged
-                    && actionResult.ModifiedCount > 0;
-            }
-            catch (Exception ex)
-            {
-                // log or manage the exception
-                throw ex;
-            }
-        }
-
-        public async Task<bool> RemoveAll()
-        {
-            try
-            {
-                DeleteResult actionResult
-                    = await _context.Events.DeleteManyAsync(new BsonDocument());
-
-                return actionResult.IsAcknowledged
-                    && actionResult.DeletedCount > 0;
-            }
-            catch (Exception ex)
-            {
-                // log or manage the exception
-                throw ex;
-            }
-        }
     }
 }

@@ -10,60 +10,81 @@ namespace URI.WebAPI.Controllers
     [Route("api/[controller]")]
     public class EventsController : Controller
     {
-        private readonly IEventRepository _eventRepository;
+        private readonly IEventRepository _repository;
 
-        public EventsController(IEventRepository eventRepository)
+        public EventsController(IEventRepository repository)
         {
-            _eventRepository = eventRepository;
+            _repository = repository;
         }
 
-
+        /// <summary>
+        /// List all Users.
+        /// </summary>
+        // GET api/Event
         [HttpGet]
-        public Task<IEnumerable<Event>> Get()
+        public IEnumerable<Event> Get()
         {
-            return GetNoteInternal();
+            var lista = _repository.GetAll();
+            return lista;
         }
 
-        private async Task<IEnumerable<Event>> GetNoteInternal()
-        {
-            return await _eventRepository.GetAllNotes();
-        }
-
-        // GET api/events/5
+        /// <summary>
+        /// Lista User by id
+        /// </summary>
+        /// <param name="id">id type GUID (required).</param>
+        // GET api/Event/5
         [HttpGet("{id}")]
-        public Task<Event> Get(string id)
+        public Event Get(Guid id)
         {
-            return GetNoteByIdInternal(id);
+            return _repository.GetById(id);
         }
 
-        private async Task<Event> GetNoteByIdInternal(string id)
-        {
-            return await _eventRepository.GetEvent(id) ?? new Event();
-        }
 
-        // POST api/notes
+        /// <summary>
+        /// Creates a User.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Event
+        ///     {
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="user"></param>
+        /// <returns>A newly-created Event</returns>
+        /// <response code="201">Returns the newly-created Event</response>
+        /// <response code="400">If the Event is null</response>           
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]Event item)
         {
-            _eventRepository.AddEvent(new Event()
+            if (item == null)
             {
-                Body = value,
-                AddDate = DateTime.Now,
-                UpdatedOn = DateTime.Now
-            });
+                return BadRequest();
+            }
+
+            item.Id = Guid.NewGuid();
+
+            _repository.Add(item);
+            return Accepted();
         }
 
-        // PUT api/notes/5
-        [HttpPut("{id}")]
-        public void Put(string id, [FromBody]string value)
+        // PUT api/Event/5
+        [HttpPut("{user}")]
+        public void Put([FromBody]Event item)
         {
-            _eventRepository.UpdateEvent(id, value);
+            _repository.Update(item);
         }
 
-        // DELETE api/notes/5
-        public void Delete(string id)
+        /// <summary>
+        /// Deletes a specific Event.
+        /// </summary>
+        /// <param name="id"> Id Type GUID</param>    
+        // DELETE api/Event/5
+        [HttpDelete("{id}")]
+        public void Delete(Guid id)
         {
-            _eventRepository.RemoveEvent(id);
+            _repository.Delete(id);
         }
     }
 }
