@@ -1,12 +1,9 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using System;
+﻿using System;
 
 namespace URI.WebAPI.Model
 {
     public class User
     {
-        [BsonId]
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Photo { get; set; }

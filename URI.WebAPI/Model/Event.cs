@@ -5,7 +5,7 @@ namespace URI.WebAPI.Model
 {
     public class Event : ModelBase
     {
-        public int IdUser { get; set; }
+        public User User { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
         public int Private { get; set; }
