@@ -2,7 +2,7 @@
 
 namespace URI.WebAPI.Repository.Interface
 {
-    interface IUserRepository : IBaseRepository<User>
+    public interface IUserRepository : IBaseRepository<User>
     {
     }
 }

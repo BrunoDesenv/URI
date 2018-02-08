@@ -6,7 +6,8 @@ using URI.WebAPI.Repository.Interface;
 
 namespace URI.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Produces("application/json")]
+    [Route("api/Events")]
     public class EventsController : Controller
     {
         private readonly IEventRepository _repository;
@@ -69,7 +70,7 @@ namespace URI.WebAPI.Controllers
         }
 
         // PUT api/Event/5
-        [HttpPut("{user}")]
+        [HttpPut("{event}")]
         public void Put([FromBody]Event item)
         {
             _repository.Update(item);

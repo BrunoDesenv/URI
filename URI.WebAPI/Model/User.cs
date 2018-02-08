@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace URI.WebAPI.Model
+﻿namespace URI.WebAPI.Model
 {
-    public class User
+    public class User : ModelBase
     {
         public string Name { get; set; }
         public string Email { get; set; }
@@ -11,7 +9,5 @@ namespace URI.WebAPI.Model
         public string Country { get; set; }
         public string State { get; set; }
         public string City { get; set; }
-        public DateTime AddDate { get; set; }
-        public DateTime UpdatedOn { get; set; }
     }
 }

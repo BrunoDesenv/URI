@@ -2,7 +2,6 @@
 {
     public class VideoEvent : ModelBase
     {
-        public int Id { get; set; }
         public User User { get; set; }
         public UserPhone UserPhone { get; set; }
         public Event Event { get; set; }
