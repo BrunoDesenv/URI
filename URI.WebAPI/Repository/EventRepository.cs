@@ -6,9 +6,8 @@ namespace URI.WebAPI.Repository
 {
     public class EventRepository : BaseRepository<Event>, IEventRepository
     {
-        private const string COLLECTION_NAME = "Events";
-        public EventRepository(IOptions<Settings> settings, string collectionName = COLLECTION_NAME) : 
-                            base(settings, collectionName)
+        private const string collectionName = "Events";
+        public EventRepository() : base(collectionName)
         {
 
         }

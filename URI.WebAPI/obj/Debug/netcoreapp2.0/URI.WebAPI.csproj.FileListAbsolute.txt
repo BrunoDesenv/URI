@@ -8,4 +8,3 @@ C:\Users\Robson\Documents\Visual Studio 2017\Projects\URI\URI.WebAPI\obj\Debug\n
 C:\Users\Robson\Documents\Visual Studio 2017\Projects\URI\URI.WebAPI\bin\Debug\netcoreapp2.0\URI.WebAPI.pdb
 C:\Users\Robson\Documents\Visual Studio 2017\Projects\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.dll
 C:\Users\Robson\Documents\Visual Studio 2017\Projects\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.pdb
-C:\Users\Robson\Documents\Visual Studio 2017\Projects\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.csprojResolveAssemblyReference.cache

@@ -12,13 +12,16 @@ namespace URI.WebAPI.Repository
     {
         private readonly IMongoDatabase _database = null;
         private string _collectionName;
+        private const string connectionString = "mongodb://localhost:27017";
+        private const string database = "UriDB";
 
-        public BaseRepository(IOptions<Settings> settings, string collectionName)
+
+        public BaseRepository( string collectionName)
         {
-            var client = new MongoClient(settings.Value.ConnectionString);
+            var client = new MongoClient(connectionString);
 
             if (client != null)
-                _database = client.GetDatabase(settings.Value.Database);
+                _database = client.GetDatabase(database);
 
             _collectionName = collectionName;
         }
