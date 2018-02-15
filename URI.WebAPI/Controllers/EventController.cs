@@ -69,12 +69,6 @@ namespace URI.WebAPI.Controllers
             return Accepted();
         }
 
-        // PUT api/Event/5
-        [HttpPut("{event}")]
-        public void Put([FromBody]Event item)
-        {
-            _repository.Update(item);
-        }
 
         /// <summary>
         /// Deletes a specific Event.
