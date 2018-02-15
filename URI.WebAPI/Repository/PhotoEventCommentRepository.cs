@@ -7,7 +7,7 @@ using URI.WebAPI.Repository.Interface;
 
 namespace URI.WebAPI.Repository
 {
-    public class PhotoEventCommentRepository : BaseRepository<PhotoEventComment>, IPhotoEventCommentRepository
+    public class PhotoEventCommentRepository : BaseRepository<Comment>, IPhotoEventCommentRepository
     {
         private const string colletionName = "PhotoEventComment";
 

@@ -7,7 +7,7 @@ using URI.WebAPI.Repository.Interface;
 
 namespace URI.WebAPI.Repository
 {
-    public class PhotoEventRepository : BaseRepository<PhotoEvent>, IPhotoEventRepository
+    public class PhotoEventRepository : BaseRepository<Photo>, IPhotoEventRepository
     {
         private const string collectionName = "PhotoEvent";
 

@@ -21,7 +21,7 @@ namespace URI.WebAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<PhotoEventComment> Get()
+        public IEnumerable<Comment> Get()
         {
             var lista = _repository.GetAll();
             return lista;
@@ -29,14 +29,14 @@ namespace URI.WebAPI.Controllers
 
         // GET: api/PhotoEventComment/5
         [HttpGet("{id}", Name = "Get")]
-        public PhotoEventComment Get(Guid id)
+        public Comment Get(Guid id)
         {
             return _repository.GetById(id);
         }
         
         // POST: api/PhotoEventComment
         [HttpPost]
-        public IActionResult Post([FromBody]PhotoEventComment item)
+        public IActionResult Post([FromBody]Comment item)
         {
             if (item == null)
             {

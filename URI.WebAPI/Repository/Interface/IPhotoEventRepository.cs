@@ -6,7 +6,7 @@ using URI.WebAPI.Model;
 
 namespace URI.WebAPI.Repository.Interface
 {
-    public interface IPhotoEventRepository : IBaseRepository<PhotoEvent>
+    public interface IPhotoEventRepository : IBaseRepository<Photo>
     {
     }
 }
