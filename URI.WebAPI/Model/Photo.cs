@@ -11,5 +11,10 @@ namespace URI.WebAPI.Model
         public string Text { get; set; }
         public int Authorization { get; set; }
         public List<Comment> Comments { get; set; }
+
+        public Photo(User user, UserPhone userPhone, int photoFile, string title, string text, int authorization, List<Comment> comments)
+        {
+            User = user; UserPhone = userPhone; PhotoFile = photoFile; Title = title; Text = text; Authorization = authorization; Comments = comments;
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace URI.WebAPI.Controllers
         }
 
         // GET: api/User/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public User Get(Guid id)
         {
             return _repository.GetById(id);

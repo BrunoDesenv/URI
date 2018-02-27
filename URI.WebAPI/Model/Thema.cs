@@ -7,5 +7,10 @@
         public string BackgroundPhoto { get; set; }
         public string ColorFont { get; set; }
         public string Song { get; set; }
+
+        public Thema(User user, string name, string backgroundPhoto, string colorFont, string song)
+        {
+            User = user; Name = name; BackgroundPhoto = backgroundPhoto; ColorFont = colorFont; Song = song;
+        }
     }
 }

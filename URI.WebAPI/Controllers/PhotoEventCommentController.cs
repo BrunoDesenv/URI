@@ -28,7 +28,7 @@ namespace URI.WebAPI.Controllers
         }
 
         // GET: api/PhotoEventComment/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public Comment Get(Guid id)
         {
             return _repository.GetById(id);

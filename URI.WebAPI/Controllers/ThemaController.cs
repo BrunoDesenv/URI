@@ -29,7 +29,7 @@ namespace URI.WebAPI.Controllers
         }
 
         // GET: api/Thema/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public Thema Get(Guid id)
         {
             return _repository.GetById(id);
