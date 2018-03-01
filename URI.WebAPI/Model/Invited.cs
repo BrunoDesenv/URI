@@ -7,6 +7,15 @@
         public string Phone { get; set; }
         public string Email { get; set; }
         public int Classification { get; set; }
+
+        public Invited(Event events, string name, string phone, string email, int classification)
+        {
+            Event = events;
+            Name = name;
+            Phone = phone;
+            Email = email;
+            Classification = classification;
+        }
   
     }
 }

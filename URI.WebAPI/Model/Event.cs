@@ -20,5 +20,26 @@ namespace URI.WebAPI.Model
         public List<Wish> Wishs { get; set; }
         public List<Video> Videos { get; set; }
         public List<Photo> Photos { get; set; }
+
+
+        public Event(string title, DateTime date, int Private, int theme, int Abstract, string locationName, string address, float latitude, 
+                     int inputValue, int consumation, int attire, List<User> users, List<Wish> wishs, List<Video> videos, List<Photo> photos)
+        {
+            Title = title;
+            Date = date;
+            this.Private = Private;
+            Theme = theme;
+            this.Abstract = Abstract;
+            LocationName = locationName;
+            Address = address;
+            Latitude = latitude;
+            InputValue = inputValue;
+            Consumation = consumation;
+            Attire = attire;
+            Users = users;
+            Wishs = wishs;
+            Videos = videos;
+            Photos = photos;
+        }
     }
 }
