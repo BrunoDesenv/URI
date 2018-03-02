@@ -35,6 +35,7 @@ namespace URI.WebAPI
             }
 
             app.UseMvc();
+
         }
     }
 }
