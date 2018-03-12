@@ -12,8 +12,8 @@ namespace URI.WebAPI.Repository
     {
         private readonly IMongoDatabase _database = null;
         private string _collectionName;
-        private const string connectionString = "mongodb://localhost:27017";
-        private const string database = "UriDB";
+        private const string connectionString = "mongodb://pinguim:uri+_.789654@ds257858.mlab.com:57858/heroku_rt8z6mf0";
+        private const string database = "heroku_rt8z6mf0";
 
 
         public BaseRepository( string collectionName)

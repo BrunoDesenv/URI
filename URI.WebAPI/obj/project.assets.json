@@ -3682,13 +3682,13 @@
           "ref/netstandard1.3/System.Diagnostics.Debug.dll": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.5.0-preview1-26216-02": {
+      "System.Diagnostics.DiagnosticSource/4.4.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
+          "ref/netcoreapp2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "System.Diagnostics.FileVersionInfo/4.3.0": {
@@ -9593,10 +9593,10 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/4.5.0-preview1-26216-02": {
-      "sha512": "qQbPDCBq+e7mhLHWtXneGR2/wu4vwJtcwvNfUFEAsUQDPgkC//NiUjaztAJbDcR6xqQ7HH1a2p3mRldJoRumNg==",
+    "System.Diagnostics.DiagnosticSource/4.4.1": {
+      "sha512": "U/KcC19fyLsPN1GLmeU2zQq15MMVcPwMOYPADVo1+WIoJpvMHxrzvl+BLLZwTEZSneGwaPFZ0aWr0nJ7B7LSdA==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/4.5.0-preview1-26216-02",
+      "path": "system.diagnostics.diagnosticsource/4.4.1",
       "files": [
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -9604,13 +9604,15 @@
         "lib/net45/System.Diagnostics.DiagnosticSource.xml",
         "lib/net46/System.Diagnostics.DiagnosticSource.dll",
         "lib/net46/System.Diagnostics.DiagnosticSource.xml",
+        "lib/netcoreapp2.0/_._",
         "lib/netstandard1.1/System.Diagnostics.DiagnosticSource.dll",
         "lib/netstandard1.1/System.Diagnostics.DiagnosticSource.xml",
         "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll",
         "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.xml",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.dll",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.4.5.0-preview1-26216-02.nupkg.sha512",
+        "ref/netcoreapp2.0/_._",
+        "system.diagnostics.diagnosticsource.4.4.1.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -13640,14 +13642,12 @@
       "Microsoft.Extensions.Configuration.CommandLine >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.1",
-      "System.Diagnostics.DiagnosticSource >= 4.5.0-preview1-26216-02",
       "System.Net.Http >= 4.3.3",
       "mongocsharpdriver >= 2.5.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Robson\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\bruno.santos.eit\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13656,26 +13656,25 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Robson\\Documents\\Visual Studio 2017\\Projects\\URI\\URI.WebAPI\\URI.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\bruno.santos.eit\\Desktop\\Projeto\\URI\\URI.WebAPI\\URI.WebAPI.csproj",
       "projectName": "URI.WebAPI",
-      "projectPath": "C:\\Users\\Robson\\Documents\\Visual Studio 2017\\Projects\\URI\\URI.WebAPI\\URI.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\Robson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Robson\\Documents\\Visual Studio 2017\\Projects\\URI\\URI.WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\bruno.santos.eit\\Desktop\\Projeto\\URI\\URI.WebAPI\\URI.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\bruno.santos.eit\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bruno.santos.eit\\Desktop\\Projeto\\URI\\URI.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Robson\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\bruno.santos.eit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://mto-ci01:800/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13692,34 +13691,30 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.All": {
+          "mongocsharpdriver": {
             "target": "Package",
-            "version": "[2.0.3, )"
-          },
-          "Microsoft.Extensions.Configuration.CommandLine": {
-            "target": "Package",
-            "version": "[2.0.0, )"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "[2.0.0, )",
-            "autoReferenced": true
+            "version": "2.5.0"
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "[2.0.1, )"
+            "version": "2.0.1"
           },
-          "System.Diagnostics.DiagnosticSource": {
+          "Microsoft.Extensions.Configuration.CommandLine": {
             "target": "Package",
-            "version": "[4.5.0-preview1-26216-02, )"
+            "version": "2.0.0"
           },
           "System.Net.Http": {
             "target": "Package",
-            "version": "[4.3.3, )"
+            "version": "4.3.3"
           },
-          "mongocsharpdriver": {
+          "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.5.0, )"
+            "version": "2.0",
+            "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "2.0.3"
           }
         },
         "imports": [

@@ -9,3 +9,14 @@ C:\Users\Robson\Documents\Visual Studio 2017\Projects\URI\URI.WebAPI\bin\Debug\n
 C:\Users\Robson\Documents\Visual Studio 2017\Projects\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.dll
 C:\Users\Robson\Documents\Visual Studio 2017\Projects\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.pdb
 C:\Users\Robson\Documents\Visual Studio 2017\Projects\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\bin\Debug\netcoreapp2.0\URI.WebAPI.deps.json
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\bin\Debug\netcoreapp2.0\URI.WebAPI.runtimeconfig.json
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\bin\Debug\netcoreapp2.0\URI.WebAPI.runtimeconfig.dev.json
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\bin\Debug\netcoreapp2.0\URI.WebAPI.dll
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\bin\Debug\netcoreapp2.0\URI.WebAPI.pdb
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.AssemblyInfoInputs.cache
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.AssemblyInfo.cs
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.dll
+C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI\obj\Debug\netcoreapp2.0\URI.WebAPI.pdb
