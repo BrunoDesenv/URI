@@ -1,0 +1,15 @@
+networks:
+  default:
+    external:
+      name: nat
+services:
+  uri.webapi:
+    build:
+      context: C:\Users\bruno.santos.eit\Desktop\Projeto\URI\URI.WebAPI
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: uri.webapi
+    ports:
+    - 80/tcp
+version: '3.0'
